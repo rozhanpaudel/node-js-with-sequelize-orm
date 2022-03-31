@@ -1,11 +1,15 @@
 const express = require("express");
 const { not } = require("joi");
 const router = require("./routes/router");
+var bodyParser = require("body-parser");
 
 const app = express();
+// require("./auth");
 
 const morganLogger = require("morgan");
+app.use(bodyParser.urlencoded({ extended: false }));
 
+// app.use(passport.initialize());
 app.use(express.static("public"));
 
 app.use(morganLogger("dev"));

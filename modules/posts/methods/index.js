@@ -18,7 +18,7 @@ exports.getAllPosts = async (req, res, next) => {
 };
 
 exports.create = async (req, res, next) => {
-  const post = { desc: Date.now() };
+  const post = { desc: req.body.desc, user_id: req.body.user_id };
 
   try {
     await PostCreation.validateAsync(post, { abortEarly: false });

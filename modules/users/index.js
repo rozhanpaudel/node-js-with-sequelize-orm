@@ -4,8 +4,10 @@ const users = require("./methods");
 var passport = require("passport");
 var GoogleStrategy = require("passport-google-oidc");
 
-userRouter.get("/list-all", users.getAllUsers);
-userRouter.get("/create", users.create);
+userRouter.get("/", users.getAllUsers);
+userRouter.post("/", users.create);
+userRouter.put("/:id", users.modify);
+userRouter.delete("/:id", users.removeUser);
 
 // userRouter.get("/login", passport.authenticate("google"));
 

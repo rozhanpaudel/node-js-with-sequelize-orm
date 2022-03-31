@@ -2,7 +2,7 @@ const express = require("express");
 const postRouter = express.Router();
 const posts = require("./methods");
 
-postRouter.get("/list-all", posts.getAllPosts);
-postRouter.get("/create", posts.create);
+postRouter.get("/", posts.getAllPosts);
+postRouter.post("/", posts.create);
 
 module.exports = postRouter;
